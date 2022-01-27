@@ -51,10 +51,10 @@ int main(int argc, char* argv[]) {
         parsing(&pData,packet,header);
 
         if(pData.fc == BEACON || pData.fc == QOS || pData.fc == DATA){
-            updateAP(pData, packet,pData.fc);/
+            updateAP(pData, packet,pData.fc);
         }
         if(pData.fc == QOS || pData.fc == PROVRQ || pData.fc == DATA) {//if Qos,Request,Data
-            updateSTA(pData, (ShareFrame *)&packet[pData.rH_len], pData.fc);/
+            updateSTA(pData, (ShareFrame *)&packet[pData.rH_len], pData.fc);
         }
         printAll();
 		
